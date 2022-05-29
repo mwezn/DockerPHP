@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  web:
+    image: php:apache
+    container_name: phpApache
+    volumes:
+      - ./:/var/www/html/ ##Will have to navigate to localhost:8000/php in order to get homepage
+    
+      ## NOTE the correct way is ./php:/var/www/html/ 
+      ## Will either map local php directory to apache root in container or create it first locally  (with 
+      ## password protected state) then map it!)
+
+    ports:
+      - 8000:80  
+
