@@ -5,12 +5,14 @@
 <body>
     <nav>
     <ul>
-        <li><a href="page2.php">Page2</a></li>
+        <li><a href="index.php">Home</a></li>
     
     </ul>
 
     </nav>
-    <h1>Hello World</h1>
+    <h1>Hello</h1>
+Welcome <?php echo $_POST["username"]; ?><br>
+Your email address is: <?php echo $_POST["password"]; ?>
 <?php
     
     echo "<p>Hello World. This is my first ever website built with Apache,PHP & Docker!</p>";
