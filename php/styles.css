@@ -8,6 +8,11 @@ h1#intro {
     color: red;
 }
 
+h3 {
+    display:flex;
+    justify-content: center;
+}
+
 form {
     border: 1px solid black;
 }

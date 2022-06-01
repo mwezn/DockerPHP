@@ -23,13 +23,7 @@
 
 <?php
     
-    echo "<p>This is Page2";
-    function square($x) {
-        $y=$x*$x;
-        echo "<h1> The value of $x*$x is:$y</h1>";
-    }
 
-   square(10)
 ?>
     
 </body>

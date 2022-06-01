@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   web:
-    image: php:apache
+    build: ./php ##Think this will build the Dockerfile ive created in /php instead of image: php:apache
     container_name: phpApache
     volumes:
       - ./php:/var/www/html/ 
@@ -11,7 +11,22 @@ services:
       ## NOTE the correct way is ./php:/var/www/html/ 
       ## This will either map local php directory to apache root in container or create it first locally  (with 
       ## password protected state) then map it!)
-
     ports:
       - 8000:80  
+  db:
+    image: mysql:8.0
+    container_name: mysqldb12345
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+    - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  
 
