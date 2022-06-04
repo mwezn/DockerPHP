@@ -1,0 +1,31 @@
+version: '3.3'
+services:
+  drupal:
+    image: drupal:latest ##Think this will build the Dockerfile ive created in /php instead of image: php:apache
+    container_name: drupalWeb
+    volumes:
+      - drupal_modules:/var/www/html/modules
+      - drupal_profiles:/var/www/html/profiles 
+      - drupal_themes:/var/www/html/themes 
+      - drupal_sites:/var/www/html/sites 
+    restart: always
+  
+    ports:
+      - 80:80  
+  db:
+    image: mysql:8.0
+    container_name: mysqldb12345
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+    - 3306:3306
+
+volumes:
+   drupal_modules:
+   drupal_profiles:
+   drupal_themes:
+   drupal_sites:
+
+
