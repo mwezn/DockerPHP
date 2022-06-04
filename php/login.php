@@ -10,9 +10,9 @@
     </ul>
 
     </nav>
-    <h1>Hello</h1>
-Welcome <?php echo $_POST["username"]; ?><br>
-Your email address is: <?php echo $_POST["password"]; ?>
+    <h1>Hello <?php echo $_POST["username"]; ?><br></h1>
+
+Password: <?php echo $_POST["password"]; ?>
 <?php
     
     echo "<p>Hello World. This is my first ever website built with Apache,PHP & Docker!</p>";
